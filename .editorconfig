@@ -1,0 +1,25 @@
+[*]
+charset = utf-8
+
+# New line preferences
+end_of_line = crlf
+insert_final_newline = true
+
+# Indentation and spacing
+indent_size = 2
+indent_style = space
+max_line_length = 140
+trim_trailing_whitespace = true
+
+# Organize usings
+dotnet_separate_import_directive_groups = true
+dotnet_sort_system_directives_first = true
+
+[*.{json,xml,csproj}]
+indent_style = space
+indent_size = 2
+
+[*.yml]
+indent_style = space
+indent_size = 2
+quote_type = single

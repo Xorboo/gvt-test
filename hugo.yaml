@@ -1,0 +1,31 @@
+baseURL: "https://xorboo.github.io/gvt-test/"
+languageCode: "en-us"
+title: "GVT"
+theme: "PaperMod"
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema
+  title: "GVT"
+  description: "GVT Meetups"
+  defaultTheme: auto # dark, light, auto
+  homeInfoParams:
+    Title: "GVT"
+    Content: "GVT Talks"
+  socialIcons:
+    - name: discord
+      url: "https://discord.gg/NjBEre4Y79"
+
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: true
+#menu:
+#  main:
+#    - identifier: 'talks'
+#      name: 'Talks'
+#      url: '/talks/'
+#      weight: 10
+
+
