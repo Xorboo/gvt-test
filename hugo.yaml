@@ -21,11 +21,3 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   disableSpecial1stPost: true
-#menu:
-#  main:
-#    - identifier: 'talks'
-#      name: 'Talks'
-#      url: '/talks/'
-#      weight: 10
-
-
