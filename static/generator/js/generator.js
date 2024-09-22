@@ -61,7 +61,7 @@ function generatePng() {
 
   const templateElement = document.getElementById("hidden-template");
   html2canvas(templateElement, {
-    scale: 2,
+    scale: 1,
     useCORS: true,
     allowTaint: true,
   })
