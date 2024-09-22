@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Meetup Announcement Template Preview</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/template-meetup.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #222222;
+        margin: 0;
+      }
+
+      #hidden-template {
+        visibility: visible;
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hidden-template"></div>
+
+    <script>
+      async function loadTemplate(containerId) {
+        try {
+          const response = await fetch("meetup-template.html");
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const templateHTML = await response.text();
+          document.getElementById(containerId).innerHTML = templateHTML;
+        } catch (error) {
+          console.error("Error loading template:", error);
+          alert("Failed to load the template. Please try again.");
+        }
+      }
+
+      // Function to initialize the template view
+      async function initializeTemplateView() {
+        await loadTemplate("hidden-template");
+      }
+
+      // Initialize the template view on DOMContentLoaded
+      document.addEventListener("DOMContentLoaded", () => {
+        initializeTemplateView();
+      });
+    </script>
+  </body>
+</html>
