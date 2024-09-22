@@ -36,10 +36,10 @@ label {
   font-weight: bold;
 }
 
-input[type='date'],
-input[type='time'],
-input[type='text'],
-input[type='file'] {
+input[type="date"],
+input[type="time"],
+input[type="text"],
+input[type="file"] {
   width: 100%;
   padding: 10px;
   background-color: #333333;
@@ -49,10 +49,10 @@ input[type='file'] {
   box-sizing: border-box;
 }
 
-input[type='date']:focus,
-input[type='time']:focus,
-input[type='text']:focus,
-input[type='file']:focus {
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="text"]:focus,
+input[type="file"]:focus {
   outline: none;
   border-color: #ff6600;
 }

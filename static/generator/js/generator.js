@@ -199,7 +199,7 @@ function downloadImages() {
     clonedTemplate.style.width = width;
 
     html2canvas(clonedTemplate, { scale: 2 }).then((canvas) => {
-      downloadImage(canvas, "event-" + width + ".png");
+      downloadImage(canvas, `gvt-${window.IMAGE_TYPE}-${width}.png`);
       document.body.removeChild(clonedTemplate);
     });
   }
