@@ -229,8 +229,6 @@ function setListeners() {
   document.querySelectorAll('#role-radio input[name="speaker-role"]').forEach((radio) => radio.addEventListener("change", debouncedUpdate));
 
   document.getElementById("download-link").addEventListener("click", downloadImages);
-}
 
-document.getElementById("generate-btn").addEventListener("click", () => {
-  updateTemplateFields();
-});
+  document.getElementById("generate-btn").addEventListener("click", () => updateTemplateFields());
+}

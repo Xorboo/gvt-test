@@ -57,7 +57,8 @@ input[type='file']:focus {
   border-color: #ff6600;
 }
 
-#download-link {
+#download-link,
+#generate-btn {
   padding: 15px;
   background-color: #ff6600;
   color: #ffffff;
@@ -70,17 +71,13 @@ input[type='file']:focus {
 }
 
 button:hover,
+#generate-btn:hover,
 #download-link:hover {
   background-color: #e65c00;
 }
 
 #generate-btn {
   width: 60px;
-  display: inline-block;
-}
-
-#generate-btn:hover {
-  background-color: #e65c00;
 }
 
 .button-container {
@@ -137,16 +134,6 @@ button:hover,
   }
 
   #preview-canvas {
-    width: 100%;
-  }
-
-  .button-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #generate-btn,
-  #download-link {
     width: 100%;
   }
 }
