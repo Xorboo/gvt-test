@@ -1,0 +1,3 @@
+{{ range resources.Match "images/originals/**.png" }}
+  {{ .Resize "670x jpg q85" }}
+{{ end }}
