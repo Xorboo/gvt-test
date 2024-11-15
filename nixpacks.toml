@@ -2,9 +2,7 @@
 cmds = [
     "sudo apt-get update && sudo apt-get install -y --no-install-recommends curl wget",
     "wget https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_Linux-64bit.tar.gz -O hugo.tar.gz",
-    "tar -xvzf hugo.tar.gz -C /usr/bin",
-    "ls -la /usr/bin",
-    "echo $PATH"
+    "tar -xvzf hugo.tar.gz -C /usr/bin"
 ]
 
 [ phases.build ]
