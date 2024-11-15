@@ -13,7 +13,7 @@ params:
     Content: "GVT Talks"
   socialIcons:
     - name: discord
-      url: "https://discord.gg/NjBEre4Y79"
+      url: "/discord"
 
   ShowReadingTime: false
   ShowShareButtons: false
