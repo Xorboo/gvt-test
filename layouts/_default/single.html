@@ -15,7 +15,7 @@
         {{- end }}
       </h1>
       {{- if .Description }}
-        <div class="post-description">{{ .Description }}</div>
+        <div class="post-description">{{ .Description | markdownify }}</div>
       {{- end }}
       {{- if not (.Param "hideMeta") }}
         <div class="post-meta">
@@ -64,7 +64,7 @@
     {{- end }}
 
     {{- if .Params.speakerInfo }}
-      <div class="post-description">{{ .Params.speakerInfo }}<br /></div>
+      <div class="post-description">{{ .Params.speakerInfo | markdownify }}<br /></div>
     {{- end }}
 
     {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default true }}
