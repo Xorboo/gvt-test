@@ -1,0 +1,25 @@
+.youtube-link {
+  position: absolute;
+  bottom: 0px;
+  right: 15px;
+  width: 48px;
+  z-index: 1;
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+.youtube-link:hover {
+  transform: scale(1.15);
+}
+
+.youtube-link:active {
+  transform: none;
+}
+
+.post-entry:has(.youtube-link:active) {
+  transform: none;
+}
+
+.post-entry:active:not(:has(.youtube-link:active)) {
+  transform: scale(0.96);
+}

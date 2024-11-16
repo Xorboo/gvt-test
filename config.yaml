@@ -14,6 +14,8 @@ params:
   socialIcons:
     - name: discord
       url: "/discord"
+    - name: youtube
+      url: "https://www.youtube.com/playlist?list=PL97f0is2Y4VnWVgBYOlmYNJIRINzCwPvz"
 
   ShowReadingTime: false
   ShowShareButtons: false
