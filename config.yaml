@@ -2,6 +2,8 @@ baseURL: "https://gvt.xorb.ooo/"
 languageCode: "en-us"
 title: "GVT"
 theme: "PaperMod"
+buildFuture: true
+enableRobotsTXT: true
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema
