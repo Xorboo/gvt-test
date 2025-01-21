@@ -2,7 +2,7 @@ async function loadTemplate(templateFilename) {
   try {
     const response = await fetch(templateFilename);
     const templateHTML = await response.text();
-    document.getElementById("hidden-template").innerHTML = templateHTML;
+    document.getElementById("template-root").innerHTML = templateHTML;
   } catch (error) {
     console.error("Error loading template:", error);
     alert("Failed to load the template. Please try again.");
@@ -20,11 +20,7 @@ function setDefaultValues() {
 
   dateInput.value = formattedDate;
 
-  const formattedDisplayDate = `${day}.${month}`;
-  const dateTextElement = document.getElementById("date-text");
-  if (dateTextElement) {
-    dateTextElement.textContent = formattedDisplayDate;
-  }
+  updateTemplateFields();
 }
 
 function waitForImagesToLoad(container) {
@@ -59,7 +55,7 @@ function debounce(func, delay) {
 function generatePng() {
   showLoading();
 
-  const templateElement = document.getElementById("hidden-template");
+  const templateElement = document.getElementById("template-root");
   html2canvas(templateElement, {
     scale: 1,
     useCORS: true,
@@ -90,7 +86,7 @@ async function initializeAndGenerate(templateFilename) {
   await loadTemplate(templateFilename);
   setDefaultValues();
 
-  const templateElement = document.getElementById("hidden-template");
+  const templateElement = document.getElementById("template-root");
 
   try {
     await waitForImagesToLoad(templateElement);
@@ -123,7 +119,7 @@ function handleImageUpload(event) {
 }
 
 async function regeneratePng() {
-  const templateElement = document.getElementById("hidden-template");
+  const templateElement = document.getElementById("template-root");
 
   try {
     await waitForImagesToLoad(templateElement);
@@ -154,29 +150,46 @@ function hideLoading() {
 
 function updateTemplateFields() {
   const dateInput = document.getElementById("event-date");
-  if (dateInput) {
+  const dateText = document.getElementById("date-text");
+  if (dateInput && dateText) {
     const date = new Date(dateInput.value);
     const day = String(date.getDate()).padStart(2, "0");
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const formattedDate = `${day}.${month}`;
 
-    document.getElementById("date-text").textContent = formattedDate;
+    dateText.textContent = formattedDate;
   }
 
   const timeInput = document.getElementById("event-time");
-  if (timeInput) document.getElementById("time-text").textContent = timeInput.value;
+  const timeText = document.getElementById("time-text");
+  if (timeInput && timeText) timeText.textContent = timeInput.value;
+
+  const dateTimeText = document.getElementById("datetime-text");
+  if (dateInput && timeInput && dateTimeText) {
+    dateTimeText.textContent = `${dateInput.value} ${timeInput.value}`;
+  }
 
   const addressInput = document.getElementById("event-address");
-  if (addressInput) document.getElementById("address-text").textContent = addressInput.value;
+  const addressText = document.getElementById("address-text");
+  if (addressInput && addressText) addressText.textContent = addressInput.value;
 
   const authorInput = document.getElementById("author-name");
-  if (authorInput) document.getElementById("author-text").textContent = authorInput.value;
+  const authorText = document.getElementById("author-text");
+  if (authorInput && authorText) authorText.textContent = authorInput.value;
 
   const speakerInput = document.getElementById("speaker-name");
-  if (speakerInput) document.getElementById("speaker-text").textContent = speakerInput.value;
+  const speakerText = document.getElementById("speaker-text");
+  if (speakerInput && speakerText) speakerText.textContent = speakerInput.value;
 
   const speakerRole = document.querySelector('input[name="speaker-role"]:checked');
-  if (speakerRole) document.getElementById("speaker-role").textContent = speakerRole.value;
+  const speakerRoleText = document.getElementById("speaker-role");
+  if (speakerRole && speakerRoleText) speakerRoleText.textContent = speakerRole.value;
+
+  const eventNumberInput = document.getElementById("event-number");
+  const eventNumberText = document.getElementById("meetup-number");
+  if (eventNumberInput && eventNumberText) {
+    eventNumberText.textContent = `#${eventNumberInput.value}`;
+  }
 
   regeneratePng();
 }
@@ -191,15 +204,17 @@ function downloadImage(canvas, filename) {
 }
 
 function downloadImages() {
-  const template = document.getElementById("hidden-template");
+  const template = document.getElementById("template-root");
 
-  for (let width of window.IMAGE_WIDTHS) {
+  for (let imageSize of window.IMAGE_SIZES) {
     const clonedTemplate = template.cloneNode(true);
     document.body.appendChild(clonedTemplate);
-    clonedTemplate.style.width = width;
+    clonedTemplate.style.width = imageSize.width;
+    clonedTemplate.style.height = imageSize.height;
 
-    html2canvas(clonedTemplate, { scale: 2 }).then((canvas) => {
-      downloadImage(canvas, `gvt-${window.IMAGE_TYPE}-${width}.png`);
+    html2canvas(clonedTemplate, { scale: 1 }).then((canvas) => {
+      const dynamicPrefix = getDynamicPrefix();
+      downloadImage(canvas, `${window.IMAGE_PREFIX}-${dynamicPrefix}-${imageSize.platform}.png`);
       document.body.removeChild(clonedTemplate);
     });
   }
@@ -207,7 +222,9 @@ function downloadImages() {
 
 function setListeners() {
   const imageUploadInput = document.getElementById("image-upload");
-  imageUploadInput.addEventListener("change", handleImageUpload);
+  if (imageUploadInput) {
+    imageUploadInput.addEventListener("change", handleImageUpload);
+  }
 
   const debouncedUpdate = debounce(updateTemplateFields, 300);
 
@@ -225,6 +242,9 @@ function setListeners() {
 
   const speakerInput = document.getElementById("speaker-name");
   if (speakerInput) speakerInput.addEventListener("input", debouncedUpdate);
+
+  const eventNumberInput = document.getElementById("event-number");
+  if (eventNumberInput) eventNumberInput.addEventListener("input", debouncedUpdate);
 
   document.querySelectorAll('#role-radio input[name="speaker-role"]').forEach((radio) => radio.addEventListener("change", debouncedUpdate));
 

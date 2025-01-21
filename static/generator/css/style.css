@@ -39,6 +39,7 @@ label {
 input[type="date"],
 input[type="time"],
 input[type="text"],
+input[type="number"],
 input[type="file"] {
   width: 100%;
   padding: 10px;
@@ -107,7 +108,7 @@ button:hover,
   border: 1px solid #000;
   margin-top: 40px;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1080px;
   height: auto;
   display: block;
   margin-left: auto;
@@ -118,14 +119,26 @@ button:hover,
   display: none;
 }
 
-#hidden-template {
-  width: 2400px;
-  height: 1350px;
+#template-root {
+  width: 1920px;
+  height: 1080px;
   background-color: rgb(29, 29, 27);
   position: absolute;
   top: -9999px;
   left: -9999px;
   overflow: hidden;
+}
+
+#template-root.big {
+  width: 2400px;
+  height: 1350px;
+}
+
+#template-root.visible {
+  visibility: visible;
+  position: relative;
+  left: 0;
+  top: 0;
 }
 
 @media (max-width: 768px) {

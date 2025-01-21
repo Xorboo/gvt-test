@@ -15,17 +15,10 @@
         background-color: #222222;
         margin: 0;
       }
-
-      #hidden-template {
-        visibility: visible;
-        position: relative;
-        left: 0;
-        top: 0;
-      }
     </style>
   </head>
   <body>
-    <div id="hidden-template"></div>
+    <div id="template-root" class="visible big"></div>
 
     <script>
       async function loadTemplate(containerId) {
@@ -42,12 +35,10 @@
         }
       }
 
-      // Function to initialize the template view
       async function initializeTemplateView() {
-        await loadTemplate("hidden-template");
+        await loadTemplate("template-root");
       }
 
-      // Initialize the template view on DOMContentLoaded
       document.addEventListener("DOMContentLoaded", () => {
         initializeTemplateView();
       });
