@@ -42,16 +42,6 @@ function waitForImagesToLoad(container) {
   return Promise.all(imagePromises);
 }
 
-function debounce(func, delay) {
-  let timeoutId;
-  return function (...args) {
-    if (timeoutId) clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
-}
-
 function generatePng() {
   showLoading();
 
@@ -226,27 +216,27 @@ function setListeners() {
     imageUploadInput.addEventListener("change", handleImageUpload);
   }
 
-  const debouncedUpdate = debounce(updateTemplateFields, 300);
-
   const dateInput = document.getElementById("event-date");
-  if (dateInput) dateInput.addEventListener("input", debouncedUpdate);
+  if (dateInput) dateInput.addEventListener("input", updateTemplateFields);
 
   const timeInput = document.getElementById("event-time");
-  if (timeInput) timeInput.addEventListener("input", debouncedUpdate);
+  if (timeInput) timeInput.addEventListener("input", updateTemplateFields);
 
   const addressInput = document.getElementById("event-address");
-  if (addressInput) addressInput.addEventListener("input", debouncedUpdate);
+  if (addressInput) addressInput.addEventListener("input", updateTemplateFields);
 
   const authorInput = document.getElementById("author-name");
-  if (authorInput) authorInput.addEventListener("input", debouncedUpdate);
+  if (authorInput) authorInput.addEventListener("input", updateTemplateFields);
 
   const speakerInput = document.getElementById("speaker-name");
-  if (speakerInput) speakerInput.addEventListener("input", debouncedUpdate);
+  if (speakerInput) speakerInput.addEventListener("input", updateTemplateFields);
 
   const eventNumberInput = document.getElementById("event-number");
-  if (eventNumberInput) eventNumberInput.addEventListener("input", debouncedUpdate);
+  if (eventNumberInput) eventNumberInput.addEventListener("input", updateTemplateFields);
 
-  document.querySelectorAll('#role-radio input[name="speaker-role"]').forEach((radio) => radio.addEventListener("change", debouncedUpdate));
+  document
+    .querySelectorAll('#role-radio input[name="speaker-role"]')
+    .forEach((radio) => radio.addEventListener("change", updateTemplateFields));
 
   document.getElementById("download-link").addEventListener("click", downloadImages);
 
