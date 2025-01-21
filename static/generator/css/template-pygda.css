@@ -28,10 +28,11 @@
   align-items: center;
   flex-direction: row;
   text-align: center;
+  gap: 100px;
 }
 
 .logo {
-  width: 800px;
+  width: 600px;
   height: auto;
 }
 

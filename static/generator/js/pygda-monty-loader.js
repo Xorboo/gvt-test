@@ -2,7 +2,7 @@ function fill_monty_images() {
   const imageGallery = document.getElementById("image-gallery");
   const numberOfImages = 4;
   const totalImages = 13;
-  const imageBasePath = "img/monty-python";
+  const imageBasePath = "images/monty-python";
 
   let availableImages = Array.from({ length: totalImages }, (_, i) => i + 1);
   availableImages = availableImages.sort(() => Math.random() - 0.5);
