@@ -6,6 +6,7 @@ speakerInfo: |
   Uczeń liceum. Po godzinach hobbystyczny modder.
 description: |
   Swoiste 101 moddowania gier wideo. Wyrosłe plusy, zakorzenione minusy oraz perspektywy dla branży.
+youtube: "https://youtu.be/7zStUrwIx1Y"
 cover:
   image: "images/talks/2024-12-13-stanislaw.png"
 ---
