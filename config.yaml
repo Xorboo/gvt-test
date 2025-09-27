@@ -18,6 +18,8 @@ params:
       url: "/discord"
     - name: youtube
       url: "https://www.youtube.com/playlist?list=PL97f0is2Y4VnWVgBYOlmYNJIRINzCwPvz"
+    - name: linkedin
+      url: "https://www.linkedin.com/company/games-visuals-tricity"
 
   ShowReadingTime: false
   ShowShareButtons: false
