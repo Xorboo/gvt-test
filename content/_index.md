@@ -1,3 +1,3 @@
 ---
-title: 'GVT Meetups Talks'
+title: "Games and Visuals Trójmiasto"
 ---

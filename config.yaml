@@ -7,12 +7,12 @@ enableRobotsTXT: true
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema
-  title: "GVT"
+  title: "Games and Visuals Trójmiasto"
   description: "GVT Meetups"
   defaultTheme: auto # dark, light, auto
   homeInfoParams:
-    Title: "GVT"
-    Content: "GVT Talks"
+    Title: "Games and Visuals Trójmiasto"
+    Content: "Monthly gamedev meetups in Trójmiasto, join us!"
   socialIcons:
     - name: discord
       url: "/discord"
