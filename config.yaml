@@ -17,9 +17,15 @@ params:
     - name: discord
       url: "/discord"
     - name: youtube
+      title: "Old playlist"
       url: "https://www.youtube.com/playlist?list=PL97f0is2Y4VnWVgBYOlmYNJIRINzCwPvz"
+    - name: youtube
+      title: "New channel"
+      url: "https://www.youtube.com/@gv3-yt"
     - name: linkedin
       url: "https://www.linkedin.com/company/games-visuals-tricity"
+    - name: facebook
+      url: "https://www.facebook.com/games.visuals"
 
   ShowReadingTime: false
   ShowShareButtons: false
