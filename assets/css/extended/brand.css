@@ -68,6 +68,12 @@
   transform: scale(1.01);
 }
 
+.searchResults li:hover,
+.searchResults li:focus-within {
+  border-color: var(--accent);
+  transform: scale(1.01);
+}
+
 .social-icons a:hover,
 .post-content a:hover,
 .post-description a:hover,
