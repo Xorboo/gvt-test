@@ -42,6 +42,12 @@
   font-family: "Sometype Mono", monospace;
 }
 
+/* Drop the theme's 320px min-height hero box: no dead space around the intro */
+.first-entry.home-info {
+  min-height: unset;
+  margin: 6px 0 24px;
+}
+
 /* Dates / entry meta in mono, like the covers' "prelegent | 15.05 | 18:00" line */
 .entry-footer,
 .post-meta {
