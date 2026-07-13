@@ -14,3 +14,6 @@ hugo.linux
 
 # Only used for prettier so far
 node_modules/
+
+# Playwright MCP output
+.playwright-mcp/
