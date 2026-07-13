@@ -9,9 +9,23 @@ theme: "PaperMod"
 buildFuture: true
 enableRobotsTXT: true
 
+# search page needs the JSON index
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+
+menu:
+  main:
+    - name: Search
+      url: /search/
+      weight: 10
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema
   images: ["/gvt-card.png"]
+  fuseOpts:
+    keys: ["title", "permalink", "summary", "content", "description", "speaker"]
+    threshold: 0.3
+    ignoreLocation: true
   title: "Games and Visuals Trójmiasto"
   description: "GVT Meetups"
   defaultTheme: auto # dark, light, auto
