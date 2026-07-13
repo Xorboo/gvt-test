@@ -3,7 +3,17 @@
   <article class="post-single">
     <header class="post-header">
       {{ partial "breadcrumbs.html" . }}
-      {{- with .Params.event }}<div><span class="event-badge event-badge-lg">{{ . }}</span></div>{{ end }}
+      <div class="entry-meta-row">
+        {{- with .Params.event }}<span class="event-badge event-badge-lg">{{ . }}</span>{{ end }}
+        {{- if not (.Param "hideMeta") }}
+          <span class="post-meta">
+            {{- partial "post_meta.html" . -}}
+            {{- partial "translation_list.html" . -}}
+            {{- partial "edit_post.html" . -}}
+            {{- partial "post_canonical.html" . -}}
+          </span>
+        {{- end }}
+      </div>
       <h1 class="post-title entry-hint-parent">
         {{ .Title }}
         {{- if .Draft }}
@@ -19,14 +29,6 @@
       {{- if .Description }}
         <div class="post-description">
           {{ .Description }}
-        </div>
-      {{- end }}
-      {{- if not (.Param "hideMeta") }}
-        <div class="post-meta">
-          {{- partial "post_meta.html" . -}}
-          {{- partial "translation_list.html" . -}}
-          {{- partial "edit_post.html" . -}}
-          {{- partial "post_canonical.html" . -}}
         </div>
       {{- end }}
     </header>
