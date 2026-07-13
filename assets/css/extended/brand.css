@@ -95,6 +95,8 @@
   padding: 0;
   border: 0;
   opacity: 0;
+  /* header sets line-height 60px; without this the input outgrows the header */
+  line-height: normal;
   background: var(--code-bg);
   color: var(--primary);
   border-radius: var(--radius);
