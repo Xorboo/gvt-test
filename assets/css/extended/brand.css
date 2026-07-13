@@ -1,0 +1,86 @@
+/* GVT brand: red accent + Sometype Mono, echoing the talk-cover art style */
+
+@font-face {
+  font-family: "Sometype Mono";
+  src: url("/generator/fonts/SometypeMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sometype Mono";
+  src: url("/generator/fonts/SometypeMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --accent: #c92a2a;
+}
+
+:root[data-theme="dark"] {
+  --accent: #ff5252;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Header logo: cover-style mono */
+.logo a {
+  font-family: "Sometype Mono", monospace;
+  letter-spacing: 0.04em;
+}
+
+.logo a:hover {
+  color: var(--accent);
+}
+
+/* Home intro: match cover typography */
+.home-info .entry-header h1 {
+  font-family: "Sometype Mono", monospace;
+}
+
+/* Dates / entry meta in mono, like the covers' "prelegent | 15.05 | 18:00" line */
+.entry-footer,
+.post-meta {
+  font-family: "Sometype Mono", monospace;
+  font-size: 13px;
+}
+
+/* Entry cards: lift + accent border on hover */
+.post-entry {
+  border: 1px solid transparent;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.post-entry:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Accent on interactive chrome */
+.social-icons a:hover,
+.post-content a:hover,
+.post-description a:hover,
+footer.footer a:hover,
+.paginav a:hover,
+.top-link:hover,
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+
+.post-content a,
+.post-description a {
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* YouTube icon on list entries: brand red on hover */
+.youtube-link a:hover {
+  color: var(--accent);
+}
