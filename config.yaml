@@ -24,7 +24,7 @@ params:
       - { name: summary, weight: 1 }
       - { name: content, weight: 1 }
       - { name: permalink, weight: 1 }
-    threshold: 0.3
+    threshold: 0.1
     ignoreLocation: true
   title: "Games and Visuals Trójmiasto"
   description: "GVT Meetups"

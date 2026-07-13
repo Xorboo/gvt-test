@@ -68,12 +68,6 @@
   transform: scale(1.01);
 }
 
-.searchResults li:hover,
-.searchResults li:focus-within {
-  border-color: var(--accent);
-  transform: scale(1.01);
-}
-
 .header-search {
   position: relative;
   display: flex;
@@ -83,6 +77,10 @@
 #header-search-toggle {
   display: flex;
   align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
   color: var(--primary);
 }
 

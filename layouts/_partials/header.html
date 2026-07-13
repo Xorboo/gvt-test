@@ -147,7 +147,7 @@
         </li>
       {{- end }}
     </ul>
-    {{- /* GVT fork: inline header search; plain link to /search/ until JS upgrades it */}}
+    {{- /* GVT fork: inline header search */}}
     <div
       class="header-search"
       id="header-search"
@@ -155,14 +155,7 @@
       data-fuseopts="{{ dict "keys" site.Params.fuseOpts.keys "threshold" (site.Params.fuseOpts.threshold | default 0.3) "ignoreLocation" true | jsonify }}"
     >
       <input id="header-search-input" type="search" placeholder="Search talks..." aria-label="Search talks" />
-      <a
-        id="header-search-toggle"
-        href="{{ "search/" | absLangURL }}"
-        aria-label="Search"
-        aria-expanded="false"
-        title="Search (Alt + /)"
-        accesskey="/"
-      >
+      <button id="header-search-toggle" aria-label="Search" aria-expanded="false" title="Search (Alt + /)" accesskey="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
@@ -177,7 +170,7 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-      </a>
+      </button>
       <ul id="header-search-results"></ul>
     </div>
     {{- $fuse := resources.Get "js/fuse.basic.min.js" }}

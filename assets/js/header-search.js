@@ -6,10 +6,18 @@
   const list = document.getElementById("header-search-results");
   let fuse;
 
+  // fold diacritics so e.g. "fabuly" matches "fabuły" (ł doesn't NFD-decompose)
+  const fold = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ł/g, "l").replace(/Ł/g, "L");
+
   async function loadIndex() {
     if (fuse) return;
     const data = await (await fetch(box.dataset.index)).json();
-    fuse = new Fuse(data, JSON.parse(box.dataset.fuseopts));
+    const opts = JSON.parse(box.dataset.fuseopts);
+    opts.getFn = (obj, path) => {
+      const value = Fuse.config.getFn(obj, path);
+      return typeof value === "string" ? fold(value) : value;
+    };
+    fuse = new Fuse(data, opts);
   }
 
   function close() {
@@ -19,8 +27,7 @@
     input.value = "";
   }
 
-  toggle.addEventListener("click", (e) => {
-    e.preventDefault();
+  toggle.addEventListener("click", () => {
     if (box.classList.contains("open")) {
       close();
       return;
@@ -35,7 +42,7 @@
     list.innerHTML = "";
     const q = input.value.trim();
     if (!fuse || q.length < 2) return;
-    for (const { item } of fuse.search(q).slice(0, 8)) {
+    for (const { item } of fuse.search(fold(q)).slice(0, 8)) {
       const a = document.createElement("a");
       a.href = item.permalink;
       a.textContent = item.title;
