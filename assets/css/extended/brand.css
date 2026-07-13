@@ -138,6 +138,10 @@
   border-bottom: 1px solid var(--border);
 }
 
+#header-search-results li:nth-child(even) {
+  background: var(--code-bg);
+}
+
 #header-search-results a {
   display: block;
   padding: 10px 14px;
@@ -145,7 +149,7 @@
 }
 
 #header-search-results a:hover {
-  background: var(--code-bg);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   color: var(--accent);
 }
 
