@@ -21,6 +21,7 @@ RUN echo 'server { \
     location / { \
         try_files $uri $uri/ $uri.html =404; \
     } \
+    error_page 404 /404.html; \
 }' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
