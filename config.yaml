@@ -11,6 +11,7 @@ enableRobotsTXT: true
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema
+  images: ["/gvt-card.png"]
   title: "Games and Visuals Trójmiasto"
   description: "GVT Meetups"
   defaultTheme: auto # dark, light, auto
