@@ -32,7 +32,7 @@
     {{- if $cover -}}
         {{/* i.e it is present in page bundle */}}
         {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) }}
-            {{- /* GVT fork: serve webp variants and never ship the full-size original (sources in assets/ stay pristine) */}}
+            {{- /* GVT fork: webp variants, original never published */}}
             {{- $maxW := int (math.Min $cover.Width 1920) }}
             {{- $full := $cover.Resize (printf "%dx webp" $maxW) }}
             <img loading="{{$loading}}"

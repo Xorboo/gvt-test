@@ -1,4 +1,4 @@
-{{- /* GVT talk extras: youtube embed + speaker info (talks have no body content, so this renders right under the header) */ -}}
+{{- /* talks have no body content, so this hook renders right under the header */ -}}
 {{- if .Params.youtube }}
   {{- $youtubeURL := .Params.youtube }}
   {{- $videoID := "" }}
@@ -28,7 +28,6 @@
     <br />
   {{- end }}
 {{- else }}
-  {{- /* No recording yet: show the announcement cover instead (if the talk has one) */ -}}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" false) }}
 {{- end }}
 

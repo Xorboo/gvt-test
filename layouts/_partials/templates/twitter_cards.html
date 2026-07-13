@@ -1,7 +1,7 @@
 {{- if .Params.cover.image -}}
   <meta name="twitter:card" content="summary_large_image" />
   {{- if (ne $.Params.cover.relative true) }}
-    {{- /* GVT fork: resized preview instead of the multi-MB original */}}
+    {{- /* GVT fork: resized preview */}}
     <meta name="twitter:image" content="{{ partial "cover-social-url.html" . }}" />
   {{- else }}
     <meta name="twitter:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}" />

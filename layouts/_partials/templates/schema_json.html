@@ -79,7 +79,7 @@
   {{ if .Params.cover.image -}}
   "image":
     {{- if (ne .Params.cover.relative true) -}}
-    {{- /* GVT fork: resized preview instead of the multi-MB original */}}
+    {{- /* GVT fork: resized preview */}}
     {{ partial "cover-social-url.html" . }},
     {{- else -}}
     {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},

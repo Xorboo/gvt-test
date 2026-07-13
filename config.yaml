@@ -1,6 +1,5 @@
 baseURL: "https://gvt.xorb.ooo/"
 
-# Fail fast with a clear error on outdated Hugo (theme needs 0.146+)
 module:
   hugoVersion:
     min: "0.146.0"
@@ -33,7 +32,7 @@ params:
       url: "https://www.facebook.com/games.visuals"
 
   cover:
-    hiddenInSingle: true # talk pages show the youtube embed instead
+    hiddenInSingle: true
   footer:
     text: "Powered by [ururus](https://xorb.ooo)"
 

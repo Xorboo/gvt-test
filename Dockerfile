@@ -1,5 +1,4 @@
-# Single source of truth for the pinned Hugo version:
-# the GitHub Pages workflow (.github/workflows/hugo.yml) reads it from this line.
+# version is parsed from this line by .github/workflows/hugo.yml
 FROM hugomods/hugo:0.164.0 AS builder
 
 WORKDIR /src
@@ -10,7 +9,6 @@ RUN hugo --minify
 
 FROM nginx:alpine
 
-# Pull patched alpine packages without waiting for the nginx image rebuild cycle
 RUN apk upgrade --no-cache
 
 COPY --from=builder /src/public /usr/share/nginx/html

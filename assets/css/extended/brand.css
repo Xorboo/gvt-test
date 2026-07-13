@@ -27,7 +27,6 @@
   color: #fff;
 }
 
-/* Header logo: cover-style mono */
 .logo a {
   font-family: "Sometype Mono", monospace;
   letter-spacing: 0.04em;
@@ -37,30 +36,26 @@
   color: var(--accent);
 }
 
-/* Home intro: match cover typography */
 .home-info .entry-header h1 {
   font-family: "Sometype Mono", monospace;
 }
 
-/* Drop the theme's 320px min-height hero box: no dead space around the intro */
+/* the theme's .first-entry forces min-height 320px */
 .first-entry.home-info {
   min-height: unset;
   margin: 6px 0 24px;
 }
 
-/* Speaker name on talk pages: cover-style mono */
 .speaker-name {
   font-family: "Sometype Mono", monospace;
 }
 
-/* Dates / entry meta in mono, like the covers' "prelegent | 15.05 | 18:00" line */
 .entry-footer,
 .post-meta {
   font-family: "Sometype Mono", monospace;
   font-size: 13px;
 }
 
-/* Entry cards: lift + accent border on hover */
 .post-entry {
   border: 1px solid transparent;
   transition:
@@ -73,7 +68,6 @@
   transform: translateY(-2px);
 }
 
-/* Accent on interactive chrome */
 .social-icons a:hover,
 .post-content a:hover,
 .post-description a:hover,
@@ -91,7 +85,6 @@ footer.footer a:hover,
   text-underline-offset: 3px;
 }
 
-/* YouTube icon on list entries: brand red on hover */
 .youtube-link a:hover {
   color: var(--accent);
 }
