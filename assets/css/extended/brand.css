@@ -48,6 +48,11 @@
   margin: 6px 0 24px;
 }
 
+/* Speaker name on talk pages: cover-style mono */
+.speaker-name {
+  font-family: "Sometype Mono", monospace;
+}
+
 /* Dates / entry meta in mono, like the covers' "prelegent | 15.05 | 18:00" line */
 .entry-footer,
 .post-meta {

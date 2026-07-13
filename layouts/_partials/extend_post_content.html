@@ -27,10 +27,13 @@
     <br />
     <br />
   {{- end }}
+{{- else }}
+  {{- /* No recording yet: show the announcement cover instead (if the talk has one) */ -}}
+  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" false) }}
 {{- end }}
 
 {{- if .Params.speaker }}
-  <h2>{{ .Params.speaker }}</h2>
+  <h2 class="speaker-name">{{ .Params.speaker }}</h2>
 {{- end }}
 
 {{- if .Params.speakerInfo }}
