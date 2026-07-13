@@ -1,0 +1,6 @@
+{{- /* Resized cover URL for og:/twitter: previews (jpg: preview bots choke on webp). Falls back to the raw path. */ -}}
+{{- $url := .Params.cover.image | absURL }}
+{{- with (resources.ByType "image").GetMatch (printf "*%s*" .Params.cover.image) }}
+  {{- $url = (.Resize "1200x jpg").Permalink }}
+{{- end }}
+{{- return $url }}

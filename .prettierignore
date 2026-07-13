@@ -1,0 +1,2 @@
+# prettier-plugin-go-template fails to parse this theme fork ("invalid node root")
+layouts/_partials/cover.html
