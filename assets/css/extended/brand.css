@@ -15,11 +15,11 @@
 }
 
 :root {
-  --accent: #c92a2a;
+  --accent: #ad3535;
 }
 
 :root[data-theme="dark"] {
-  --accent: #ff5252;
+  --accent: #de6a6a;
 }
 
 ::selection {
