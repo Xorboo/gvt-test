@@ -38,7 +38,7 @@
       {{- end }}
 
       {{- if .Content }}
-        <div class="post-content">
+        <div class="post-content md-content">
           {{- if not (.Param "disableAnchoredHeadings") }}
             {{- partial "anchored_headings.html" .Content -}}
           {{- else }}
@@ -100,8 +100,6 @@
               {{- partial "post_meta.html" . -}}
             </footer>
           {{- end }}
-
-
           <div class="youtube-link">
             {{- with .Params.youtube }}
               <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer" title="YouTube">

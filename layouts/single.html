@@ -15,16 +15,16 @@
         {{- end }}
       </h1>
       {{- if .Description }}
-        <div class="post-description">{{ .Description | markdownify }}</div>
+        <div class="post-description">
+          {{ .Description | markdownify }}
+        </div>
       {{- end }}
       {{- if not (.Param "hideMeta") }}
         <div class="post-meta">
           {{- partial "post_meta.html" . -}}
           {{- partial "translation_list.html" . -}}
           {{- partial "edit_post.html" . -}}
-          {{- partial
-            "post_canonical.html" .
-          -}}
+          {{- partial "post_canonical.html" . -}}
         </div>
       {{- end }}
     </header>
@@ -68,12 +68,13 @@
     {{- end }}
 
     {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default true }}
-    {{- partial "cover.html" (dict "cxt"
-      . "IsSingle" true "isHidden" $isHidden)
-    }}
-    {{- if (.Param "ShowToc") }}{{- partial "toc.html" . }}{{- end }}
+    {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+    {{- if (.Param "ShowToc") }}
+      {{- partial "toc.html" . }}
+    {{- end }}
+
     {{- if .Content }}
-      <div class="post-content">
+      <div class="post-content md-content">
         {{- if not (.Param "disableAnchoredHeadings") }}
           {{- partial "anchored_headings.html" .Content -}}
         {{- else }}
@@ -81,6 +82,8 @@
         {{ end }}
       </div>
     {{- end }}
+
+    {{- partial "extend_post_content.html" . }}
 
 
     <footer class="post-footer">
@@ -93,13 +96,13 @@
       {{- if (.Param "ShowPostNavLinks") }}
         {{- partial "post_nav_links.html" . }}
       {{- end }}
-      {{- if (and site.Params.ShowShareButtons (ne
-        .Params.disableShare true))
-      }}
+      {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
         {{- partial "share_icons.html" . -}}
       {{- end }}
     </footer>
 
-    {{- if (.Param "comments") }}{{- partial "comments.html" . }}{{- end }}
+    {{- if (.Param "comments") }}
+      {{- partial "comments.html" . }}
+    {{- end }}
   </article>
-{{- end }}
+{{- end }}{{- /* end main */ -}}

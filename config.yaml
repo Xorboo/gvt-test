@@ -1,5 +1,5 @@
 baseURL: "https://gvt.xorb.ooo/"
-languageCode: "en-us"
+locale: "en-us"
 title: "GVT"
 theme: "PaperMod"
 buildFuture: true
