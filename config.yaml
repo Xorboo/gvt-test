@@ -13,12 +13,6 @@ enableRobotsTXT: true
 outputs:
   home: ["HTML", "RSS", "JSON"]
 
-menu:
-  main:
-    - name: Search
-      url: /search/
-      weight: 10
-
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema
   images: ["/gvt-card.png"]
