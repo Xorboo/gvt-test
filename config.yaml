@@ -32,9 +32,13 @@ params:
     - name: facebook
       url: "https://www.facebook.com/games.visuals"
 
+  cover:
+    hiddenInSingle: true # talk pages show the youtube embed instead
+  footer:
+    text: "Powered by [ururus](https://xorb.ooo)"
+
   ShowReadingTime: false
   ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
-  disableSpecial1stPost: true
