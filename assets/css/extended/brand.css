@@ -193,6 +193,15 @@ footer.footer a:hover,
   min-height: 32px;
 }
 
+.post-header .entry-meta-row {
+  margin: 14px 0 4px;
+}
+
+/* cancel the theme's .post-meta margin-top inside the flex row */
+.post-header .entry-meta-row .post-meta {
+  margin-top: 0;
+}
+
 .event-badge-lg {
   font-size: 15px;
   margin-bottom: 8px;
