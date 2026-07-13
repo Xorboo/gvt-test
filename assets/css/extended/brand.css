@@ -169,3 +169,85 @@ footer.footer a:hover,
 .youtube-link a:hover {
   color: var(--accent);
 }
+
+/* 404: the 0 is a pong ball between the 4s */
+.error-404 {
+  padding: 80px 0;
+  text-align: center;
+  font-family: "Sometype Mono", monospace;
+}
+
+.pong-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  font-size: 130px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.pong-404 .ball {
+  color: var(--accent);
+  animation: pong 2.4s linear infinite;
+}
+
+@keyframes pong {
+  0% {
+    translate: -46px 0;
+  }
+  25% {
+    translate: 0 -14px;
+  }
+  50% {
+    translate: 46px 0;
+  }
+  75% {
+    translate: 0 14px;
+  }
+  100% {
+    translate: -46px 0;
+  }
+}
+
+.error-404 h1 {
+  margin-top: 40px;
+  font-size: 26px;
+  letter-spacing: 0.12em;
+}
+
+.error-404 p {
+  margin-top: 12px;
+  color: var(--secondary);
+}
+
+.error-404 a {
+  display: inline-block;
+  margin-top: 36px;
+  font-weight: 700;
+  animation: blink 1.4s infinite;
+}
+
+.error-404 a:hover {
+  color: var(--accent);
+  animation: none;
+}
+
+@keyframes blink {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pong-404 .ball,
+  .error-404 a {
+    animation: none;
+  }
+}
