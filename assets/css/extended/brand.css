@@ -65,7 +65,7 @@
 
 .post-entry:hover {
   border-color: var(--accent);
-  transform: translateY(-2px);
+  transform: scale(1.01);
 }
 
 .social-icons a:hover,
