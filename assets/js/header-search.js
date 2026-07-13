@@ -45,21 +45,25 @@
     for (const { item } of fuse.search(fold(q)).slice(0, 8)) {
       const a = document.createElement("a");
       a.href = item.permalink;
-      const line = document.createElement("div");
+      const meta = document.createElement("div");
+      meta.className = "result-meta";
       if (item.event) {
         const ev = document.createElement("span");
         ev.className = "result-event";
         ev.textContent = item.event;
-        line.appendChild(ev);
+        meta.appendChild(ev);
       }
-      line.appendChild(document.createTextNode(item.title));
-      a.appendChild(line);
       if (item.speaker) {
-        const sp = document.createElement("div");
+        const sp = document.createElement("span");
         sp.className = "result-speaker";
         sp.textContent = item.speaker;
-        a.appendChild(sp);
+        meta.appendChild(sp);
       }
+      if (meta.childNodes.length) a.appendChild(meta);
+      const title = document.createElement("div");
+      title.className = "result-title";
+      title.textContent = item.title;
+      a.appendChild(title);
       const li = document.createElement("li");
       li.appendChild(a);
       list.appendChild(li);

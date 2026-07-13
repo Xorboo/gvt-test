@@ -1,11 +1,19 @@
 .youtube-link {
-  position: absolute;
-  bottom: 0px;
-  right: 15px;
-  width: 48px;
+  /* relative + z-index keeps it clickable above the card's entry-link overlay */
+  position: relative;
   z-index: 1;
-  pointer-events: auto;
+  margin-left: auto;
+  display: flex;
   transition: transform 0.2s ease;
+}
+
+.youtube-link a {
+  display: flex;
+}
+
+.youtube-link svg {
+  width: 32px;
+  height: 32px;
 }
 
 .youtube-link:hover {
