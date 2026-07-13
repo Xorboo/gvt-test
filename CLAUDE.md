@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Hugo static site for GVT (Games and Visuals Trójmiasto) gamedev meetups, using the PaperMod theme as a git submodule (`themes/PaperMod`). Deployed to GitHub Pages via `.github/workflows/hugo.yml` on push to `master`. A `Dockerfile` (hugo build + nginx) exists as an alternative deployment.
+Hugo static site for GVT (Games and Visuals Trójmiasto) gamedev meetups, using the PaperMod theme as a git submodule (`themes/PaperMod`). Production is https://gvt.xorb.ooo/ — Coolify auto-builds the `Dockerfile` (hugo build + nginx) on push to `master`. The same push also deploys to GitHub Pages via `.github/workflows/hugo.yml`.
 
 ## Commands
 
