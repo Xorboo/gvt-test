@@ -15,6 +15,10 @@ Hugo static site for GVT (Games and Visuals Trójmiasto) gamedev meetups, using 
 
 There are no tests.
 
+## Hugo version management
+
+The pinned Hugo version lives in exactly one place: the `FROM hugomods/hugo:X.Y.Z` line in the Dockerfile. The GitHub Pages workflow parses it from there — to bump Hugo, change only that line. `config.yaml` sets `module.hugoVersion.min` as a compatibility floor (bump it only when the theme requires a newer Hugo). Local installs are managed via winget (`winget upgrade Hugo.Hugo.Extended`).
+
 ## Content model
 
 - **Talks** live in `content/talks/YYYY-MM-DD-speaker.md`, one file per talk, with a matching cover image in `assets/images/talks/YYYY-MM-DD-speaker.{png,jpg,webp}`. Adding a talk = new md file + image. Front matter fields: `title` (format `GVT #N: Talk title`), `date`, `speaker`, `speakerInfo` (markdown), `description`, `cover.image`, and optionally `youtube` (recording link).

@@ -1,3 +1,5 @@
+# Single source of truth for the pinned Hugo version:
+# the GitHub Pages workflow (.github/workflows/hugo.yml) reads it from this line.
 FROM hugomods/hugo:0.164.0 AS builder
 
 WORKDIR /src
