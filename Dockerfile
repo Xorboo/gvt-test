@@ -10,6 +10,9 @@ RUN hugo --minify
 
 FROM nginx:alpine
 
+# Pull patched alpine packages without waiting for the nginx image rebuild cycle
+RUN apk upgrade --no-cache
+
 COPY --from=builder /src/public /usr/share/nginx/html
 
 # Handle clean URLs just in case
