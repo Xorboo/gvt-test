@@ -45,7 +45,21 @@
     for (const { item } of fuse.search(fold(q)).slice(0, 8)) {
       const a = document.createElement("a");
       a.href = item.permalink;
-      a.textContent = item.title;
+      const line = document.createElement("div");
+      if (item.event) {
+        const ev = document.createElement("span");
+        ev.className = "result-event";
+        ev.textContent = item.event;
+        line.appendChild(ev);
+      }
+      line.appendChild(document.createTextNode(item.title));
+      a.appendChild(line);
+      if (item.speaker) {
+        const sp = document.createElement("div");
+        sp.className = "result-speaker";
+        sp.textContent = item.speaker;
+        a.appendChild(sp);
+      }
       const li = document.createElement("li");
       li.appendChild(a);
       list.appendChild(li);

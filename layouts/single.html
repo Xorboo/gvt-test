@@ -3,8 +3,9 @@
   <article class="post-single">
     <header class="post-header">
       {{ partial "breadcrumbs.html" . }}
+      {{- with .Params.event }}<div><span class="event-badge event-badge-lg">{{ . }}</span></div>{{ end }}
       <h1 class="post-title entry-hint-parent">
-        {{ partial "full-title.html" . }}
+        {{ .Title }}
         {{- if .Draft }}
           <span class="entry-hint" title="Draft">
             <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">

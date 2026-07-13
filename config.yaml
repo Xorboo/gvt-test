@@ -20,7 +20,9 @@ params:
     keys:
       - { name: title, weight: 3 }
       - { name: speaker, weight: 3 }
+      - { name: event, weight: 2 }
       - { name: description, weight: 2 }
+      - { name: speakerinfo, weight: 1 }
       - { name: summary, weight: 1 }
       - { name: content, weight: 1 }
       - { name: permalink, weight: 1 }

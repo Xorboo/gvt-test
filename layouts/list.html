@@ -77,8 +77,9 @@
           {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
           {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
           <header class="entry-header">
+            {{- with .Params.event }}<span class="event-badge">{{ . }}</span>{{ end }}
             <h2 class="entry-hint-parent">
-              {{- partial "full-title.html" . }}
+              {{- .Title }}
               {{- if .Draft }}
                 <span class="entry-hint" title="Draft">
                   <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
@@ -97,7 +98,7 @@
           {{- end }}
           {{- if not (.Param "hideMeta") }}
             <footer class="entry-footer">
-              {{- partial "post_meta.html" . -}}
+              {{- with .Params.speaker }}<span>{{ . }}</span>&nbsp;&middot;&nbsp;{{ end }}{{- partial "post_meta.html" . -}}
             </footer>
           {{- end }}
           <div class="youtube-link">
