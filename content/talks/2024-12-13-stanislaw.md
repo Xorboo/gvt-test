@@ -1,5 +1,6 @@
 ---
-title: "GVT #12: Modding, czyli jak przestałem się martwić i pokochałem brak praw autorskich"
+event: "GVT #12"
+title: "Modding, czyli jak przestałem się martwić i pokochałem brak praw autorskich"
 date: 2024-12-13
 speaker: "Stanisław Chroboczek"
 speakerInfo: |

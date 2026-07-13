@@ -1,5 +1,6 @@
 ---
-title: 'GVT #15: Czego nauczył mnie solo development własnej gry - post-mortem "Flooded"'
+event: 'GVT #15'
+title: 'Czego nauczył mnie solo development własnej gry - post-mortem "Flooded"'
 date: 2025-03-21
 speaker: Tymoteusz Piasek
 speakerInfo: |

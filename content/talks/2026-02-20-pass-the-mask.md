@@ -1,5 +1,6 @@
 ---
-title: "GVT #23: Jak zrobić grę bez prądu* w 48h! - Stwórz planszówkę na Game Jamie!"
+event: "GVT #23"
+title: "Jak zrobić grę bez prądu* w 48h! - Stwórz planszówkę na Game Jamie!"
 date: 2026-02-20
 speaker: Pass the Mask! - Zespół z GGJ '26
 speakerInfo: |

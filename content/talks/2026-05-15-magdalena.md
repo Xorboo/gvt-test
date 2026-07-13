@@ -1,5 +1,6 @@
 ---
-title: "GVT #26: Community Management – One of the Most Misunderstood Roles in the Industry"
+event: "GVT #26"
+title: "Community Management – One of the Most Misunderstood Roles in the Industry"
 date: 2026-05-15
 speaker: Magdalena Górska, Tallana
 speakerInfo: |

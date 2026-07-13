@@ -16,7 +16,7 @@
   {{- end }}
 {{- end }}
 
-{{- with or .Title site.Title site.Params.title | plainify }}
+{{- with or (partial "full-title.html" .) site.Title site.Params.title | plainify }}
   <meta name="twitter:title" content="{{ . }}" />
 {{- end }}
 

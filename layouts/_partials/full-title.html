@@ -1,0 +1,4 @@
+{{- /* display title recomposed from the event + title front matter fields */ -}}
+{{- $t := .Title -}}
+{{- with .Params.event -}}{{- $t = printf "%s: %s" . $t -}}{{- end -}}
+{{- return $t -}}
